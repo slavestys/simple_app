@@ -4,7 +4,7 @@ before_filter :authorized_user, :only => :destroy
   def create
    @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = I18n.t(:t_micropost_create)
       redirect_to root_path
     else
       @feed_items = []
@@ -14,7 +14,7 @@ before_filter :authorized_user, :only => :destroy
   end
 def destroy
     @micropost.destroy
-    redirect_back_or root_path
+    redirect_back_or current_user
   end
 
   private

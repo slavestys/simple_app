@@ -2,14 +2,14 @@
   <td class="micropost">
     <span class="content"><%= micropost.content %></span>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+       <%=I18n.t(:t_posted)%> <%= time_ago_in_words(micropost.created_at)%> <%=I18n.t(:t_ago)%>.
     </span>
   </td>
    <% user = micropost.user rescue User.find(micropost.user_id) %>
 <% if current_user?(user) %>
   <td>
-    <%= link_to "delete", micropost, :method => :delete,
-                                     :confirm => "You sure?",
+    <%= link_to I18n.t(:t_delete), micropost, :method => :delete,
+                                     :confirm => I18n.t(:t_confurm_delete),
                                      :title => micropost.content %>
   </td>
   <% end %>

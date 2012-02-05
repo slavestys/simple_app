@@ -1,9 +1,12 @@
 <% if object.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(object.errors.count, "error") %>
-        prohibited this <%= object.class.to_s.underscore.humanize.downcase %>
-        from being saved:</h2>
-    <p>There were problems with the following fields:</p>
+  <div id="error_explanation">  	
+    <h2><%=object.errors.count %><% if I18n.locale==:ru %>
+    		<%= Russian::pluralize(object.errors.count,"ошибка","ошибки","ошибок") %>
+    	<% else %>
+    		<%=pluralize(object.errors.count, I18n.t(:t_error_caption))%>
+    	<% end %>
+       <%= I18n.t(:t_errors_caption) %></h2>
+    <p><%= I18n.t(:t_errors_description) %></p>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

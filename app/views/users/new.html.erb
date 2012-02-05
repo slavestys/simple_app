@@ -1,22 +1,22 @@
 <%= form_for(@user) do |f| %>
 <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, I18n.t(:t_username_caption) %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, I18n.t(:t_user_email_caption) %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password,I18n.t(:t_user_password_caption) %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.label :password_confirmation, I18n.t(:t_user_confirmation_caption) %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit I18n.t(:t_signup_caption) %>
   </div>
 <% end %>

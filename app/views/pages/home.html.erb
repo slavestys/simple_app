@@ -2,23 +2,20 @@
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
-        <h1 class="micropost">What's up?</h1>
+        <h1 class="micropost"><%=I18n.t(:t_whatsup)%></h1>
         <%= render 'shared/micropost_form' %>
-         <%= render 'shared/feed' %>
+         <%= render 'shared/feed' %>         
       </td>
       <td class="sidebar round">
         <%= render 'shared/user_info' %>
+        <%= render 'shared/stats' %>
       </td>
     </tr>
   </table>
 <% else %>
-  <h1>Sample App</h1>
+  <h1>MEO</h1>
 
-  <p>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </p>
+  <p><%= I18n.t(:t_main_text) %></p>
 
-  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <%= link_to I18n.t(:t_signup), signup_path, :class => "signup_button round" %>
 <% end %>

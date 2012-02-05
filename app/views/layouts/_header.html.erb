@@ -2,18 +2,22 @@
   <%= link_to logo, root_path %>
   <nav class="round">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to I18n.t(:t_home), root_path %></li>
+      <li><%= link_to I18n.t(:t_users), users_path %></li>
        <% if signed_in? %>
-      <li><%= link_to "Profile", current_user %></li>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li><%= link_to I18n.t(:t_profile), current_user %></li>
+      <li><%= link_to I18n.t(:t_settings), edit_user_path(current_user) %></li>
       <% end %>
-      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to I18n.t(:t_help), help_path %></li>
      <% if signed_in? %>
-<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+<li><%= link_to I18n.t(:t_signout), signout_path, :method => :delete %></li>
 <% else %>
-<li><%= link_to "Sign in", signin_path %></li>
+<li><%= link_to I18n.t(:t_signin), signin_path %></li>
 <% end %>
-    </ul>
+    </ul>   
   </nav>
+   <ul class='locale_selector'>
+    	<li><% ru_img=image_tag("ru.jpg")%><%= link_to ru_img,"?locale=ru" %></li>
+    	<li><% en_img=image_tag("en.jpg")%><%= link_to en_img,"?locale=en" %></li>    	
+    </ul>
 </header>

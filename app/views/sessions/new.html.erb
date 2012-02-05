@@ -1,17 +1,17 @@
-<h1>Sign in</h1>
+<h1><%=I18n.t(:t_signin)%></h1>
 
 <%= form_for(:session, :url => sessions_path) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email,I18n.t(:t_user_email_caption) %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password,I18n.t(:t_user_password_caption) %><br />
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign in" %>
+    <%= f.submit I18n.t(:t_signin) %>
   </div>
 <% end %>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<p><%=I18n.t(:t_new_user)%> <%= link_to I18n.t(:t_signup), signup_path %></p>

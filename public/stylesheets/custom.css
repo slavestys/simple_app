@@ -8,6 +8,7 @@ body {
 
 header {
   padding-top: 20px;
+  position:relative;
 }
 
 header img {
@@ -126,6 +127,7 @@ td.sidebar {
 .profile img.gravatar {
   border: 1px solid #999;
   margin-bottom: -15px;
+  float:left;
 }
 div.field, div.actions {
   margin-bottom: 10px;
@@ -198,7 +200,7 @@ table.microposts tr td.gravatar {
 table.microposts tr td.micropost {
   border-top: 1px solid #ccc;
   vertical-align: top;
-  padding-top: 10px;
+  padding-top: 2px;
 }
 
 table.microposts tr td.micropost span.timestamp {
@@ -208,7 +210,8 @@ table.microposts tr td.micropost span.timestamp {
 }
 
 div.user_info img {
-  padding-right: 0.1em;
+  padding-right: 10px;
+  float:left;
 }
 
 div.user_info a {
@@ -216,7 +219,7 @@ div.user_info a {
 }
 
 div.user_info span.user_name {
-  position: absolute;
+  
 }
 
 div.user_info span.microposts {
@@ -231,3 +234,30 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+table, th, td{
+	vertical-align:top;
+}
+.td_center,.td_center td{
+	vertical-align:middle;
+}
+.locale_selector{
+	position:absolute;
+	top:40px;
+	right:0px;	
+	margin:0
+}
+.locale_selector li{
+	float:left;
+	padding:5px 2px;
+	width:20px;
+	height:13px;
+	list-style:none;
+}
+.locale_selector img{
+	background:none;
+	padding:0;
+}
+.selected_locale{
+	background:#006699;
+}
+
